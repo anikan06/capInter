@@ -1,0 +1,24 @@
+<div class="cd-hd">
+    User List
+  </div>
+  <div class="cd-bd">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Hobby</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let ud of userDetails; let i = index">
+      <td>{{ud.name}}</td>
+       <td>{{ud.age}}</td>
+        <td>{{ud.gender}}</td>
+         <td>{{ud.hobbies}} {{i}}</td>
+          <td>
+            <a class="del" (click)="delete(i)">Delete</a>
+          </td>
+    </tr>
+  </table>
+  
+  </div>

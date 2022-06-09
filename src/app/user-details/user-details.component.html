@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="flx t1">
+      <div class="cd-hd">
+        add user information
+      </div>
+      <div class="cd-bd">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      
+        <label for="name">Name</label><br/>
+        <input type="text" id="name" formControlName="name">
+        <br/>
+
+        <label for="age">Age</label><br/>
+        <input type="text" id="age" formControlName="age">
+        <br/>
+
+        <label for="gender">Gender</label><br/>
+        <ng-container *ngFor="let gender of genders">
+            <input type="radio" formControlName="gender" [value]="gender"> {{gender}}
+        </ng-container>
+        
+        
+        <br/>
+        <label for="Hobbies">Hobbies</label><br/>
+        <input type="text" formControlName="hobbies">
+        <button class="as" (click)="addItem()">+</button>
+        <button class="as" (click)="addItem()">-</button>
+        <br/>
+
+        <!-- <div formArrayName="hobbies" *ngFor="let creds of userForm.get('hobbies')?.value; let i = index">
+          
+          <ng-container [formGroupName]="i">
+            <input placeholder="Username" formControlName="username">
+            <input placeholder="Password" formControlName="password">
+          </ng-container>
+        </div> -->
+
+
+        <input type="checkbox" name="T&C" value="accept" formControlName="verified">
+        <label for="T&C">All the information are verified</label>
+        <br>
+        <button class="btn" [disabled]="!userForm.valid">Add</button>
+        <button type="reset" class="btn">Reset</button>
+        
+        
+      </form>
+      
+      </div>
+      
+    </div>
+
+ 
+
+    <!-- listing -->
+    <div class="flx t2">
+      <app-user-list></app-user-list>
+    
+    </div>
+    
+    </div>
+
+    <div class="list">
+      <app-api></app-api>
+    </div>

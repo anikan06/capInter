@@ -1,0 +1,18 @@
+<h3> API INTEGRATION EXAMPLE</h3>
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>gender</th>
+        <th>status</th>
+    </tr>
+    <tr *ngFor="let det of dataArr; let i=index">
+        <td>{{det.id}}</td>
+        <td>{{det.name}}</td>
+        <td>{{det.email}}</td>
+        <td>{{det.gender}}</td>
+        <td>{{det.status}}</td>
+        
+    </tr>
+</table>
